@@ -15,4 +15,6 @@ public interface ItemPermission {
     Subject getSubject();
 
     boolean isAllowedTo(Privilege... privileges);
+
+    boolean isAllowedTo(List<Privilege> privileges);
 }

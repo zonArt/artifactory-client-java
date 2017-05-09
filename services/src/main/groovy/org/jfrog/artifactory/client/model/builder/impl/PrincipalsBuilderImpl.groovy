@@ -11,21 +11,33 @@ import org.jfrog.artifactory.client.model.impl.PrincipalsImpl
  */
 class PrincipalsBuilderImpl implements PrincipalsBuilder {
 
-    private List<Principal> users;
-    private List<Principal> groups;
+    private List<Principal> users
+    private List<Principal> groups
 
     private PrincipalsBuilderImpl() {
     }
 
     @Override
-    public PrincipalsBuilder users(Principal... users) {
-        this.users = Arrays.asList(users);
+    PrincipalsBuilder users(Principal... users) {
+        this.users = Arrays.asList(users)
         this
     }
 
     @Override
-    public PrincipalsBuilder groups(Principal... groups) {
-        this.groups = Arrays.asList(groups);
+    PrincipalsBuilder users(List<Principal> users) {
+        this.users = users
+        this
+    }
+
+    @Override
+    PrincipalsBuilder groups(Principal... groups) {
+        this.groups = Arrays.asList(groups)
+        this
+    }
+
+    @Override
+    PrincipalsBuilder groups(List<Principal> groups) {
+        this.groups = groups
         this
     }
 

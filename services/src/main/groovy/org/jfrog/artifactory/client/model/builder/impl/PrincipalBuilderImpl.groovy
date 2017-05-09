@@ -14,7 +14,7 @@ class PrincipalBuilderImpl implements PrincipalBuilder {
     private String name
     private Set<Privilege> privileges = new LinkedHashSet<>();
 
-    public PrincipalBuilderImpl() {
+    PrincipalBuilderImpl() {
     }
 
     PrincipalBuilderImpl name(String name) {
@@ -27,7 +27,12 @@ class PrincipalBuilderImpl implements PrincipalBuilder {
         this
     }
 
+    PrincipalBuilder privileges(List<Privilege> privileges) {
+        this.privileges = privileges
+        this
+    }
+
     Principal build() {
-        return new PrincipalImpl(name, privileges);
+        return new PrincipalImpl(name, privileges)
     }
 }

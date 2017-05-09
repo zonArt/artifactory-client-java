@@ -48,4 +48,14 @@ public class ItemPermissionImpl implements ItemPermission {
         }
         return true;
     }
+
+    @Override
+    public boolean isAllowedTo(List<Privilege> privileges) {
+        for (Privilege privilege : privileges) {
+            if (!this.privileges.contains(privilege)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
